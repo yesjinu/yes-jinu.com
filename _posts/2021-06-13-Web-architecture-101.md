@@ -2,7 +2,7 @@
 
 [Web Architecture 101](https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947)
 
-![Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled.png](Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled.png)
+![../img/posts/2021-06-13-Web-architecture-101/Untitled.png](../img/posts/2021-06-13-Web-architecture-101/Untitled.png)
 
 위 다이어그램은 Storyblocks 웹사이트 아키텍쳐에 대한 좋은 구조도 입니다. 만약 당신이 숙련된 웹 개발자가 아니라면, 위 그림이 매우 복잡하게 보일 것입니다. 각 컴포넌트의 세부사항으로 들어가기 전에 아래의 이야기를 읽고 나면 이해하는 데에 큰 도움이 될 것입니다.
 
@@ -46,7 +46,7 @@ DNS는 "Domain Name Service"의 약자이고, 이것은 world wide web을 가능
 
 SQL은 'Structured Query Language'의 줄임말로, 1970년대 관계형 데이터를 쿼리하는 데에 표준적인 방법을 정하기 위해 개발되었습니다. SQL 데이터는 표에 데이터를 저장하고, 각 표는 공통의 ID를 통해 연결되어있습니다. 간단한 예를 들어볼까요. 유저의 주소 정보를 저장한다고 합니다. 당신은 아마도 2개의 테이블이 필요할 겁니다. user 테이블과 user_address 테이블이요. 아래 이미지를 참고해주세요. user_address 테이블의 user_id 칼럼은 user 테이블의 id 칼럼의 '외래 키'입니다. 두 테이블은 이 칼럼을 통해 서로 연결되어 있죠. 
 
-![Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%201.png](Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%201.png)
+![../img/posts/2021-06-13-Web-architecture-101/Untitled%201.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%201.png)
 
 만약 당신이 SQL에 대해서 잘 모른다면, [칸 아카데미](https://www.khanacademy.org/computing/computer-programming/sql) 등의 자료를 통해 학습하기를 강력히 권합니다. SQL은 모든 종류의 웹 개발에 사용되기 때문에 배워두면 굉장히 유용할겁니다. 
 
@@ -84,7 +84,7 @@ Job 서버는 job queue를 검사해 처리할 작업이 있는지 확인합니�
 
 많은 웹 어플리케이션은 자체 검색 기능을 제공합니다. 유저가 특정 텍스트 인풋을 넣으면(쿼리라고 불림), 어플리케이션은 가장 관련있는 정보를 보여주는 식이죠. 이런 종류의 기능을 지원하는 기능을 흔히 'full-text search'라고 부릅니다. Inverted index를 활용해 쿼리의 특정 키워드를 문서에서 빠르게 검색하는 방식이죠. 
 
-![Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%202.png](Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%202.png)
+![../img/posts/2021-06-13-Web-architecture-101/Untitled%202.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%202.png)
 
 데이터베이스에서 full-text serach를 지원하는 경우, 별도의 'search service'를 분리해 운영하는 것이 일반적입니다. 이 서버는 inverted index를 연산하고 저장하며, 쿼리 인터페이스를 제공합니다. 가장 유명한 full-text search 플랫폼은 Elasticsearch입니다. Sphinx, Apache Solr과 같은 대체재도 있습니다.
 
@@ -115,7 +115,7 @@ AWS에 따르면, 클라우드 저장소란 인터넷을 통해 데이터를 저
 
 CDN은 'Content Delivery Network'의 줄임말이고, 이 기술은 서로 멀리 떨어져있는 서버 간 빠른 데이터 전송(정적 HTML, CSS, JS, etc.)을 위해 사용됩니다. CDN은 원본 서버 이외에도, 전 세계에 퍼진 edge 서버에 데이터를 분산시켜놓습니다. 예를 들어 아래의 이미지와 같이, 스페인의 유저가 뉴욕에 위치한 서버에 웹 페이지를 요청할 경우, 대서양을 횡단하는 HTTP 요청을 주고받는 대신, CDN edge 서버인 영국으로부터 전달 받게 됩니다. 
 
-![Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%203.png](Web%20architecture%20101%20212a8f6fbdbb4207b45ba0eb085b3142/Untitled%203.png)
+![../img/posts/2021-06-13-Web-architecture-101/Untitled%203.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%203.png)
 
 이 아티클을 통해 더 상세한 인트로덕션을 확인해보세요. 대개 웹 어플리케이션의 경우 CSS, JS, 이미지, 비디오 등의 에셋을 전송하기 위해 CDN을 사용합니다. 특정 앱의 경우 정적인 HTML 페이지를 제공하기 위해서도 CDN을 사용합니다.
 
