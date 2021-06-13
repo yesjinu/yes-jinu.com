@@ -3,14 +3,14 @@ layout: post
 title: "Web Architecture 101 (번역)"
 subtitle: "내가 웹 개발자로 일하기 시작했을 때 알았다면 좋았을 것들"
 date: 2021-06-13 23:55:13 +0900
-background: '../img/posts/2021-06-13-Web-architecture-101/Untitled.png'
+background: 'img/posts/2021-06-13-Web-architecture-101/Untitled.png'
 ---
 
 # Web architecture 101
 
 원문 링크 - [Web Architecture 101](https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947)
 
-![../img/posts/2021-06-13-Web-architecture-101/Untitled.png](../img/posts/2021-06-13-Web-architecture-101/Untitled.png)
+![모던 웹 어플리케이션 아키텍쳐 구조도](img/posts/2021-06-13-Web-architecture-101/Untitled.png)
 
 위 다이어그램은 Storyblocks 웹사이트 아키텍쳐에 대한 좋은 구조도 입니다. 만약 당신이 숙련된 웹 개발자가 아니라면, 위 그림이 매우 복잡하게 보일 것입니다. 각 컴포넌트의 세부사항으로 들어가기 전에 아래의 이야기를 읽고 나면 이해하는 데에 큰 도움이 될 것입니다.
 
@@ -54,7 +54,7 @@ DNS는 "Domain Name Service"의 약자이고, 이것은 world wide web을 가능
 
 SQL은 'Structured Query Language'의 줄임말로, 1970년대 관계형 데이터를 쿼리하는 데에 표준적인 방법을 정하기 위해 개발되었습니다. SQL 데이터는 표에 데이터를 저장하고, 각 표는 공통의 ID를 통해 연결되어있습니다. 간단한 예를 들어볼까요. 유저의 주소 정보를 저장한다고 합니다. 당신은 아마도 2개의 테이블이 필요할 겁니다. user 테이블과 user_address 테이블이요. 아래 이미지를 참고해주세요. user_address 테이블의 user_id 칼럼은 user 테이블의 id 칼럼의 '외래 키'입니다. 두 테이블은 이 칼럼을 통해 서로 연결되어 있죠. 
 
-![../img/posts/2021-06-13-Web-architecture-101/Untitled%201.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%201.png)
+![FK로 연결된 두 테이블](img/posts/2021-06-13-Web-architecture-101/Untitled%201.png)
 
 만약 당신이 SQL에 대해서 잘 모른다면, [칸 아카데미](https://www.khanacademy.org/computing/computer-programming/sql) 등의 자료를 통해 학습하기를 강력히 권합니다. SQL은 모든 종류의 웹 개발에 사용되기 때문에 배워두면 굉장히 유용할겁니다. 
 
@@ -92,7 +92,7 @@ Job 서버는 job queue를 검사해 처리할 작업이 있는지 확인합니�
 
 많은 웹 어플리케이션은 자체 검색 기능을 제공합니다. 유저가 특정 텍스트 인풋을 넣으면(쿼리라고 불림), 어플리케이션은 가장 관련있는 정보를 보여주는 식이죠. 이런 종류의 기능을 지원하는 기능을 흔히 'full-text search'라고 부릅니다. Inverted index를 활용해 쿼리의 특정 키워드를 문서에서 빠르게 검색하는 방식이죠. 
 
-![../img/posts/2021-06-13-Web-architecture-101/Untitled%202.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%202.png)
+![3개의 문서가 어떻게 inverted index로 변환되는지에 대한 예시](img/posts/2021-06-13-Web-architecture-101/Untitled%202.png)
 
 데이터베이스에서 full-text serach를 지원하는 경우, 별도의 'search service'를 분리해 운영하는 것이 일반적입니다. 이 서버는 inverted index를 연산하고 저장하며, 쿼리 인터페이스를 제공합니다. 가장 유명한 full-text search 플랫폼은 Elasticsearch입니다. Sphinx, Apache Solr과 같은 대체재도 있습니다.
 
@@ -109,9 +109,9 @@ Job 서버는 job queue를 검사해 처리할 작업이 있는지 확인합니�
 
 오늘날 많은 기업들은 그들이 데이터를 어떻게 다루느냐에 따라 사활이 달려있습니다. 특정 이상의 스케일에 다다른 대부분의 앱들은 데이터를 모으고, 저장하고, 분석하는 파이프라인을 개발해 사용하고 있습니다. 통상적인 데이터 파이프라인은 다음과 같은 3개의 stage로 구성됩니다.
 
-1. 어플리케이션은 유저와의 상호작용으로 발생한 이벤트에 대한 데이터를 데이터 firehose에 전송합니다. Firehose는 데이터를 수집하고, 처리하는 스트리밍 인터페이스를 제공합니다. 대부분의 경우 raw data는 가공되어 다른 firehose로 전달됩니다. AWS kinesis와 Kafka가 가장 널리 쓰이는 툴입니다.
-2. 원본 데이터와 변환된 데이터는 모두 클라우드 저장소에 저장됩니다. AWS kinesis는 firehose라는 기능을 제공하는데, 이 기능을 통해 원본 데이터를 S3 클라우드 저장소에 매우 쉽게 저장할 수 있습니다.
-3. 변환된 데이터는 데이터 웨어하우스로 저장됩니다. 스타트업들의 경우 AWS redshift를, 더 큰 기업들은 Oracle이나 다른 웨어하우스 툴을 사용합니다. 분석을 진행하기에 데이터의 크기가 너무 크다면 hadoop과 같은 NoSQL map reduce 기술을 사용하는 것이 필요합니다. 
+1) 어플리케이션은 유저와의 상호작용으로 발생한 이벤트에 대한 데이터를 데이터 firehose에 전송합니다. Firehose는 데이터를 수집하고, 처리하는 스트리밍 인터페이스를 제공합니다. 대부분의 경우 raw data는 가공되어 다른 firehose로 전달됩니다. AWS kinesis와 Kafka가 가장 널리 쓰이는 툴입니다.
+2) 원본 데이터와 변환된 데이터는 모두 클라우드 저장소에 저장됩니다. AWS kinesis는 firehose라는 기능을 제공하는데, 이 기능을 통해 원본 데이터를 S3 클라우드 저장소에 매우 쉽게 저장할 수 있습니다.
+3) 변환된 데이터는 데이터 웨어하우스로 저장됩니다. 스타트업들의 경우 AWS redshift를, 더 큰 기업들은 Oracle이나 다른 웨어하우스 툴을 사용합니다. 분석을 진행하기에 데이터의 크기가 너무 크다면 hadoop과 같은 NoSQL map reduce 기술을 사용하는 것이 필요합니다. 
 
 아키텍쳐 다이어그램에서 다루지 않은 것은 어플리케이션과 서비스의 데이터베이스에서 데이터 웨어하우스로 데이터를 로드하는 부분입니다. 예를 들어 Storyblock의 경우, 자사의 Videoblocks, Audioblocks, 계정 서비스 등의 데이터를 매일 밤 redshift로 load하고 있습니다. 이를 통해 우리는 핵심 비즈니스 데이터를 한 곳에 모아 총체적인 분석을 진행할 수 있습니다.
 
@@ -123,7 +123,7 @@ AWS에 따르면, 클라우드 저장소란 인터넷을 통해 데이터를 저
 
 CDN은 'Content Delivery Network'의 줄임말이고, 이 기술은 서로 멀리 떨어져있는 서버 간 빠른 데이터 전송(정적 HTML, CSS, JS, etc.)을 위해 사용됩니다. CDN은 원본 서버 이외에도, 전 세계에 퍼진 edge 서버에 데이터를 분산시켜놓습니다. 예를 들어 아래의 이미지와 같이, 스페인의 유저가 뉴욕에 위치한 서버에 웹 페이지를 요청할 경우, 대서양을 횡단하는 HTTP 요청을 주고받는 대신, CDN edge 서버인 영국으로부터 전달 받게 됩니다. 
 
-![../img/posts/2021-06-13-Web-architecture-101/Untitled%203.png](../img/posts/2021-06-13-Web-architecture-101/Untitled%203.png)
+![CDN](img/posts/2021-06-13-Web-architecture-101/Untitled%203.png)
 
 이 아티클을 통해 더 상세한 인트로덕션을 확인해보세요. 대개 웹 어플리케이션의 경우 CSS, JS, 이미지, 비디오 등의 에셋을 전송하기 위해 CDN을 사용합니다. 특정 앱의 경우 정적인 HTML 페이지를 제공하기 위해서도 CDN을 사용합니다.
 
