@@ -1,6 +1,14 @@
+---
+layout: post
+title: "Web Architecture 101 (번역)"
+subtitle: "내가 웹 개발자로 일하기 시작했을 때 알았다면 좋았을 것들"
+date: 2021-06-13 23:55:13 +0900
+background: '../img/posts/2021-06-13-Web-architecture-101/Untitled.png'
+---
+
 # Web architecture 101
 
-[Web Architecture 101](https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947)
+원문 링크 - [Web Architecture 101](https://medium.com/storyblocks-engineering/web-architecture-101-a3224e126947)
 
 ![../img/posts/2021-06-13-Web-architecture-101/Untitled.png](../img/posts/2021-06-13-Web-architecture-101/Untitled.png)
 
