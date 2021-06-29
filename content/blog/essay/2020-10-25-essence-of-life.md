@@ -2,7 +2,7 @@
 layout: post
 title: "자기 일의 본질에 집중해야 한다"
 date: 2020-07-27 23:55:13 +0900
-category: Essay
+category: essay
 draft: false
 ---
 

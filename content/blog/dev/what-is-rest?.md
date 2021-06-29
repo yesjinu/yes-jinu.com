@@ -1,7 +1,7 @@
 ---
 title: What is REST?
 date: 2021-06-23 21:06:54
-category: Dev
+category: dev
 thumbnail: { thumbnailSrc }
 draft: true
 ---

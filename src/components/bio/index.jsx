@@ -23,8 +23,7 @@ export const Bio = () => (
                 }}
               />
               <div className="author-name">
-                <span className="author-name-prefix">Written by</span>
-                <Link to={'/about'} className="author-name-content">
+                <Link to={'https://bit.ly/resume_jinu_noh'} className="author-name-content" target="_blank">
                   <span>@{author}</span>
                 </Link>
                 <div className="author-introduction">{introduction}</div>

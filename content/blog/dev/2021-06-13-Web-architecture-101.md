@@ -1,7 +1,7 @@
 ---
 title: "Web Architecture 101 (번역)"
 date: 2021-06-13 23:55:13 +0900
-category: Dev
+category: dev
 draft: false
 ---
 

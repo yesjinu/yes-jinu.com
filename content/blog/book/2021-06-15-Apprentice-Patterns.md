@@ -3,7 +3,7 @@ layout: post
 title: "Apprentice Pattern"
 subtitle: "훌륭한 소프트웨어 개발자로 성장하기를 열망하는 사람들을 위해"
 date: 2021-06-15 21:05:00 +0900
-category: Books
+category: books
 draft: false
 ---
 
