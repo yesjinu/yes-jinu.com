@@ -1,6 +1,6 @@
 ---
-title: Javascript, Map vs. Object
-date: 2021-06-30 20:06:17
+title: Map vs. Object (JS)
+date: 2021-06-30 20:06:17 +0900
 category: dev
 thumbnail: { thumbnailSrc }
 draft: false

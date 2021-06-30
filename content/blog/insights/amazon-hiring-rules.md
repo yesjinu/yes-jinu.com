@@ -1,6 +1,6 @@
 ---
 title: 아마존의 3가지 채용 기준
-date: 2021-06-30 22:06:71
+date: 2021-06-30 22:06:71 +0900
 category: insights
 thumbnail: { thumbnailSrc }
 draft: false

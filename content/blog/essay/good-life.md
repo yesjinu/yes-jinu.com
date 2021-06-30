@@ -1,6 +1,6 @@
 ---
 title: 만족스러운 하루가 모여 좋은 인생이 된다.
-date: 2021-06-22 21:06:03
+date: 2021-06-22 21:06:03 +0900
 category: essay
 thumbnail: { thumbnailSrc }
 draft: false

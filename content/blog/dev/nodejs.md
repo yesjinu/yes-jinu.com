@@ -1,6 +1,6 @@
 ---
 title: Node.js Architecture and 12 Best Practices (번역)
-date: 2021-06-18 21:30:13
+date: 2021-06-18 21:30:13 +0900
 category: dev
 draft: false
 ---
