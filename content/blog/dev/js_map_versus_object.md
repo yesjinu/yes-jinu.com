@@ -6,6 +6,8 @@ thumbnail: { thumbnailSrc }
 draft: false
 ---
 
+![image](../img/thankyou.png)
+
 ## Intro.
 회사에서 간단한 로직을 작성하는 중이었다. `map` 안에 `map`이 들어있는 nested map형태의 데이터를 순회하며 가장 하위에 있는 `number[]`  타입의 값을 가져와야하는 일이었다.
 
@@ -15,7 +17,6 @@ JS가 제공하는 `forEach`, `map` 등의 함수를 사용하는 중에, 문득
 
 이런 경우 MDN이 제공하는 문서를 꼼꼼히 읽어보는 것이 정답이지만, 클라이언트 단에서 코드 완성을 기다리고 있었기 때문에, 일단은 빠르게 코드 완성/디플로이하고 퇴근 이후에 차분히 읽어보고 정리하기로 한다.
 
----
 ## Map vs. Object
 [Map - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
@@ -54,15 +55,17 @@ Object와 map은 비슷한 구석이 많다. 둘 다 key, value 쌍을 저장할
 ### 그 외 Map에 관해 몰랐던 사실
 - Map은 insertion 순서를 기억한다.
 - Primitive value는 물론 function, object도 key값으로 사용될 수 있다.
+  - 아래와 같이 쓸 수 있는 것. 이걸 어떤 상황에 쓸 수 있을지? :thinking_face:
+
+
 ```javascript
 const m = new Map();
-
 function f () {
-    // do something
+  // do something
 }
 
 m.set(f, some_value);
 m.get(f); // some_value
 ```
-	- 위와 같이 쓸 수 있는 것. 이걸 어떤 상황에 쓸 수 있을지는.. 지켜봐야 알듯
 
+	
