@@ -1,5 +1,6 @@
 ---
-title: 함께 자라기, 애자일로 가는 길
+layout: post
+title: "[함께 자라기, 애자일로 가는 길]"
 date: 2021-07-01 20:07:03 +0900
 category: books
 thumbnail: { thumbnailSrc }

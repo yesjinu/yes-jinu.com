@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Apprentice Pattern"
+title: "[프로그래머의 길, 멘토에게 묻다]"
 subtitle: "훌륭한 소프트웨어 개발자로 성장하기를 열망하는 사람들을 위해"
 date: 2021-06-15 21:05:00 +0900
 category: books
 draft: false
 ---
 
-### 프로그래머의 길, 멘토에게 묻다
+### Apprentice Pattern
 
 > 견습생을 시작하며
 
