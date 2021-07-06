@@ -1,6 +1,6 @@
 ---
 title: Google the most basic things, daily
-date: 2021-07-04 19:07:94
+date: 2021-07-04 19:07:04
 category: insights
 thumbnail: { thumbnailSrc }
 draft: false
