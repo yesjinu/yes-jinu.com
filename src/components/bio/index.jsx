@@ -23,7 +23,7 @@ export const Bio = () => (
                 }}
               />
               <div className="author-name">
-                <Link to={'https://bit.ly/resume_jinu_noh'} className="author-name-content" target="_blank">
+                <Link to={'https://www.notion.so/jncompany/77e0e61d4fb446c298fb972f3363b0e8'} className="author-name-content" target="_blank">
                   <span>@{author}</span>
                 </Link>
                 <div className="author-introduction">{introduction}</div>
