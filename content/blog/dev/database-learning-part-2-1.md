@@ -1,5 +1,5 @@
 ---
-title: 데이터베이스 개론과 실습 part 2-1.
+title: 데이터베이스 개론과 실습 part 2 (1/2)
 date: 2021-07-10 22:07:32
 category: dev
 thumbnail: { thumbnailSrc }
@@ -91,4 +91,30 @@ WHERE name     LIKE '%a%'
 > 문제를 뒤집어서, (a | e | i | o | u)를 모두 포함하지 않는 것을 찾으라고 했다면 헷갈렸을지도. SQL 쿼리문을 배울수록 아주 작은 쿼리 블럭부터 쌓아나간다는 느낌을 받는다.
 
 ---
+
+---
+## SELECT within SELECT
+https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial
+4-6. Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values)
+
+```sql
+SELECT name
+FROM world
+WHERE gdp > ALL(SELECT gdp 
+					FROM world
+				 	WHERE gdp > 0 AND continent='EUROPE'
+					)
+```
+> ALL이라는 키워드가 있다. 마치 함수형 프로그래밍에서 `map`을 사용하는 것처럼 모든 결과들에 대해 `>` operator를 분배해서 적용시킨다. 결과적으로 MAX 처럼 사용할 수 있는 것!
+
+4-7. Find the largest country (by area) in each continent, show the continent, the name and the area:
+```sql
+SELECT continent, name, area 
+FROM world x
+WHERE area >= ALL(SELECT area 
+                  FROM world y
+                  WHERE x.continent = y.continent 
+                  AND y.area > 0);
+```
+> subquery를 이용한 첫번째 문제. 안쪽 `SELECT`에서 바깥 `SELECT`의 변수를 호출할 수 있다. 바깥쪽 world와 안쪽 world 테이블을 구별하기 aliasing을 사용했다.
 
