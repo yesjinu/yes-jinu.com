@@ -37,10 +37,3 @@ WHERE publish_date >= '2000-01-01'
 GROUP BY YEAR(publish_date)
 ```
 이 경우 `publish_date`에 클러스터 인덱스를 부여하면 비약적인 성능 향상이 가능하다. 테이블이 `publish_date`를 기준으로 정렬될 것이기 때문이다. 
-
-여기에서 `WHERE` 조건절을 삭제해보자. 이떄 
-```sql
-SELECT YEAR(publish_date), COUNT(*)
-FROM books
-GROUP BY YEAR(publish_date)
-```
